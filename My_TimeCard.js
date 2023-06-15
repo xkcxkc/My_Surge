@@ -1,8 +1,8 @@
 /*
  * 由@smartmimi编写
  * 原脚本地址：https://raw.githubusercontent.com/smartmimi/conf/master/surge/timecard.js
- * 由@Rabbit-Spec修改
- * 更新日期：2022.06.22
+ * 由@xkcxkc修改
+ * 更新日期：2023.06.15
  * 版本：1.0
 */
 
