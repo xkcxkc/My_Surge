@@ -21,7 +21,7 @@ var messages = targetDates
     .join('\n');
 
 $task.fetch({
-  url: "https://v1.hitokoto.cn/?c=a&c=b&encode=json&maxlength=15"
+  url: "https://v1.hitokoto.cn/?c=a&c=b&maxlength=20"
 }).then(response => {
   try {
     // 尝试解析获取的数据
@@ -29,10 +29,8 @@ $task.fetch({
     // 取出句子和出处
     let sentence = data.hitokoto;
     let source = data.from;
-    // 生成通知的内容，句子和出处分别在不同的行
-    let content = sentence + '\n' + source;
-    // 发送通知
-    $notify(content, '', messages);
+    // 发送通知，句子放在标题部分，出处放在消息部分
+    $notify(sentence, '', source ? ('—— ' + source + '\n' + messages) : messages);
   } catch (error) {
     // 如果解析数据时有错误，发送一个包含错误信息的通知
     $notify('解析数据时出错', '', error.toString());
