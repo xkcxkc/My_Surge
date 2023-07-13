@@ -21,14 +21,25 @@ var messages = targetDates
     .join('\n');
 
 $task.fetch({
-  url: "https://v1.hitokoto.cn/?c=a&c=b&encode=text&max_length=16"
+  url: "https://v1.hitokoto.cn/?c=a&c=b&encode=json&maxlength=15"
 }).then(response => {
-  // 使用获取的数据作为通知的标题
-  $notify(response.body, '', messages);
+  try {
+    // 尝试解析获取的数据
+    let data = JSON.parse(response.body);
+    // 取出句子和出处
+    let sentence = data.hitokoto;
+    let source = data.from;
+    // 生成通知的内容，句子和出处分别在不同的行
+    let content = sentence + '\n' + source;
+    // 发送通知
+    $notify(content, '', messages);
+  } catch (error) {
+    // 如果解析数据时有错误，发送一个包含错误信息的通知
+    $notify('解析数据时出错', '', error.toString());
+  }
   $done();
 }, reason => {
-  // 如果请求失败，使用一个错误消息作为标题
-  console.error(reason.error);
-  $notify('出错啦！', '', messages);
+  // 如果请求失败，发送一个包含错误信息的通知
+  $notify('请求数据时出错', '', reason.error);
   $done();
 });
