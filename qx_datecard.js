@@ -21,7 +21,7 @@ var messages = targetDates
     .join('\n');
 
 $task.fetch({
-  url: "https://v1.hitokoto.cn/?c=a&c=b&maxlength=20"
+  url: "https://v1.hitokoto.cn/?c=a&c=b&max_length=16"
 }).then(response => {
   try {
     // 尝试解析获取的数据
