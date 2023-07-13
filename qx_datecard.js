@@ -21,7 +21,7 @@ var messages = targetDates
     .join('\n');
 
 $task.fetch({
-  url: "https://v1.hitokoto.cn/?c=a&c=b&c=c&c=d&c=h&encode=text&maxlength=15"
+  url: "https://v1.hitokoto.cn/?c=a&c=b&encode=text&max_length=16"
 }).then(response => {
   // 使用获取的数据作为通知的标题
   $notify(response.body, '', messages);
