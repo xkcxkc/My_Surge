@@ -9,7 +9,7 @@ https://glados.rocks/api/user/checkin url script-request-header https://raw.gith
 
 [mitm]
 
-hostname = glados.rocks
+hostname = glados.rocks,glados.network,glados.s pa ce
 
 */
 
