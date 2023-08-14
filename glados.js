@@ -1,10 +1,10 @@
 [rewrite_local]
 
-https://glados.rocks/api/user/checkin url script-request-header https://gist.githubusercontent.com/ddgksf2013/32b3d37d78433a34370cbfb69780160d/raw/glados.js
+https://glados.rocks/api/user/checkin url script-request-header https://raw.githubusercontent.com/xkcxkc/My_Surge/main/glados.js
 
 [task_local]
 
-15 7,15 * * * https://gist.githubusercontent.com/ddgksf2013/32b3d37d78433a34370cbfb69780160d/raw/glados.js, tag=Glados, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/GLaDOS.png
+15 7,15 * * * https://raw.githubusercontent.com/xkcxkc/My_Surge/main/glados.js, tag=Glados, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/GLaDOS.png
 
 
 [mitm]
