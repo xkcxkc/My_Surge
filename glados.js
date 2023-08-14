@@ -1,6 +1,6 @@
 [rewrite_local]
 
-https://glados.rocks/api/user/checkin url script-request-header https://raw.githubusercontent.com/xkcxkc/My_Surge/main/glados.js
+https://glados.network/api/user/checkin url script-request-header https://raw.githubusercontent.com/xkcxkc/My_Surge/main/glados.js
 
 [task_local]
 
