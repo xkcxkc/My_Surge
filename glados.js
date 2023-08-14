@@ -1,3 +1,4 @@
+/*
 [rewrite_local]
 
 https://glados.network/api/user/checkin url script-request-header https://raw.githubusercontent.com/xkcxkc/My_Surge/main/glados.js
